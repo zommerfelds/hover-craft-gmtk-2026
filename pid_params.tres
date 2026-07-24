@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PidControllerParams" format=3 uid="uid://pmrv6a6hr1ti"]
+
+[ext_resource type="Script" uid="uid://cllcd2l4udiff" path="res://pid_controller_params.gd" id="1_ljiun"]
+
+[resource]
+script = ExtResource("1_ljiun")
+p = 5.0
+d = 0.2
+max_integral = 0.5
+max_output_magnitude = 1.0
+metadata/_custom_type_script = "uid://cllcd2l4udiff"

@@ -1,12 +1,33 @@
 extends RigidBody3D
 
+const stabilizer_y_pid_params = preload("res://pid_params.tres")
+@onready var pid_controller = PidController.new(stabilizer_y_pid_params)
+
 func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
 
 func _physics_process(delta: float) -> void:
-	linear_velocity.x = 5
-	if Input.is_action_pressed("thrust"):
-		apply_force(Vector3(0, 30, 0))
+	linear_velocity.x = 3
+
+	var dist = 10.0
+	if %RayCast3D.is_colliding():
+		var hit_point = %RayCast3D.get_collision_point()
+		dist = %RayCast3D.global_position.distance_to(hit_point)
+
+	var thrust = 0
+
+
+	var pid_output = pid_controller.calculate(1, dist, delta)
+	print(pid_output, " ", dist)
+	thrust = max(0, 30 * pid_output)
+
+	if Input.is_action_pressed("thrust") and dist > 0.0:
+		#var thrust = 200 * max(0, 1-dist) + 5
+		#apply_force(Vector3(0, thrust, 0))
+		thrust = max(thrust, 30)
+
+	apply_force(Vector3(0, thrust, 0))
