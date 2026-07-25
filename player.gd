@@ -39,7 +39,6 @@ func _physics_process(delta: float) -> void:
 		thrust_ramp = min(1, thrust_ramp + delta * 4)
 		apply_force(global_transform.basis * Vector3(0, 30, 0) * thrust_ramp)
 	else:
-
 		thrust_ramp = max(0, thrust_ramp - delta * 5)
-
+	%GPUParticles3D.amount_ratio = thrust_ramp
 	apply_force(Vector3(0, thrust, 0))

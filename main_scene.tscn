@@ -6,6 +6,33 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_t18f2"]
 size = Vector3(0.6628418, 0.5619507, 1)
 
+[sub_resource type="Gradient" id="Gradient_2c62f"]
+colors = PackedColorArray(0.6666667, 0.34901962, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2c62f"]
+gradient = SubResource("Gradient_2c62f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jp3p1"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.2
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, -1, 0)
+spread = 11.03
+initial_velocity_min = 6.0699997
+initial_velocity_max = 9.57
+color_ramp = SubResource("GradientTexture1D_2c62f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyfs4"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_t18f2"]
+material = SubResource("StandardMaterial3D_gyfs4")
+size = Vector3(0.1, 0.1, 0.1)
+
 [sub_resource type="Environment" id="Environment_jp3p1"]
 background_mode = 1
 ambient_light_source = 2
@@ -34,6 +61,11 @@ script = ExtResource("1_0f027")
 [node name="CSGBox3D" type="CSGBox3D" parent="Player/PlayerVisual" unique_id=223422873]
 size = Vector3(0.6977539, 0.60058594, 0.7324219)
 
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Player/PlayerVisual" unique_id=947413816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.29312134, 0)
+radius = 0.33007813
+height = 0.20758057
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=733718507]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020751953, -0.0008624494, 0)
 shape = SubResource("BoxShape3D_t18f2")
@@ -42,6 +74,14 @@ shape = SubResource("BoxShape3D_t18f2")
 unique_name_in_owner = true
 top_level = true
 target_position = Vector3(0, -10, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Player" unique_id=997305581]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016830057, 0)
+amount = 100
+lifetime = 0.15000000000000002
+process_material = SubResource("ParticleProcessMaterial_jp3p1")
+draw_pass_1 = SubResource("BoxMesh_t18f2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1179679103]
 environment = SubResource("Environment_jp3p1")
