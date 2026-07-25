@@ -20,7 +20,6 @@ func _physics_process(delta: float) -> void:
 
 	var thrust = 0
 
-
 	var pid_output = pid_controller.calculate(1, dist, delta)
 	print(pid_output, " ", dist)
 	thrust = max(0, 30 * pid_output)

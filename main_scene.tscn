@@ -10,6 +10,9 @@ background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(0.9843158, 0.8852665, 0.87888867, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0f027"]
+albedo_color = Color(0.562211, 0.5679668, 0.19921553, 1)
+
 [node name="Node3D" type="Node3D" unique_id=1112978267]
 
 [node name="Player" type="RigidBody3D" parent="." unique_id=1776688773]
@@ -20,7 +23,8 @@ axis_lock_angular_z = true
 script = ExtResource("1_0f027")
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1845939483]
-transform = Transform3D(0.91558605, 0.045737207, -0.39951253, 0, 0.9935106, 0.11373961, 0.40212205, -0.104138404, 0.9096445, 0.76719964, 0.19132745, 3.3219032)
+transform = Transform3D(0.980481, 0.022362756, -0.19533773, 4.147811e-10, 0.9935106, 0.11373962, 0.1966136, -0.111519516, 0.9741183, 2.0250688, 0.67024136, 5.7135687)
+fov = 53.9
 
 [node name="PlayerVisual" type="CSGCombiner3D" parent="Player" unique_id=1783345853]
 
@@ -39,9 +43,10 @@ target_position = Vector3(0, -10, 0)
 environment = SubResource("Environment_jp3p1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1437710427]
-transform = Transform3D(0.860911, -0.16740502, 0.4804246, -0.27529672, 0.6408287, 0.71662426, -0.42783636, -0.74920905, 0.50561047, -2.7519145, 0, 5.2655764)
+transform = Transform3D(0.71496415, 0.6348036, -0.29300302, -0.2752967, 0.6408287, 0.71662426, 0.64268035, -0.4316979, 0.63292885, -2.7519145, 0, 5.2655764)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1486677997]
+material_override = SubResource("StandardMaterial3D_0f027")
 use_collision = true
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D" unique_id=27216595]
