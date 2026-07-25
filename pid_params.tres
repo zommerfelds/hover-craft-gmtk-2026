@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ljiun")
 p = 5.0
-d = 0.2
+d = 0.05
 max_integral = 0.5
 max_output_magnitude = 1.0
 metadata/_custom_type_script = "uid://cllcd2l4udiff"

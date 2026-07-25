@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dtlhvjnpkolvq"]
 
 [ext_resource type="Script" uid="uid://cxem5s83l4jfs" path="res://player.gd" id="1_0f027"]
+[ext_resource type="Script" uid="uid://562k1573ksec" path="res://camera.gd" id="1_2c62f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t18f2"]
 size = Vector3(0.6628418, 0.5619507, 1)
@@ -15,16 +16,18 @@ albedo_color = Color(0.562211, 0.5679668, 0.19921553, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1112978267]
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1845939483]
+transform = Transform3D(0.9804811, 0.02236275, -0.1953377, 4.1478113e-10, 0.9935106, 0.113739595, 0.19661361, -0.111519516, 0.97411835, 2.0250688, 0.67024136, 5.7135687)
+fov = 53.9
+script = ExtResource("1_2c62f")
+
 [node name="Player" type="RigidBody3D" parent="." unique_id=1776688773]
+unique_name_in_owner = true
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_0f027")
-
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1845939483]
-transform = Transform3D(0.980481, 0.022362756, -0.19533773, 4.147811e-10, 0.9935106, 0.11373962, 0.1966136, -0.111519516, 0.9741183, 2.0250688, 0.67024136, 5.7135687)
-fov = 53.9
 
 [node name="PlayerVisual" type="CSGCombiner3D" parent="Player" unique_id=1783345853]
 
@@ -37,6 +40,7 @@ shape = SubResource("BoxShape3D_t18f2")
 
 [node name="RayCast3D" type="RayCast3D" parent="Player" unique_id=1048577369]
 unique_name_in_owner = true
+top_level = true
 target_position = Vector3(0, -10, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1179679103]
