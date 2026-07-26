@@ -44,7 +44,7 @@ albedo_color = Color(0.562211, 0.5679668, 0.19921553, 1)
 [node name="Node3D" type="Node3D" unique_id=1112978267]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1845939483]
-transform = Transform3D(0.9804811, 0.02236275, -0.1953377, 4.1478113e-10, 0.9935106, 0.113739595, 0.19661361, -0.111519516, 0.97411835, 2.0250688, 0.67024136, 5.7135687)
+transform = Transform3D(0.9804811, 0.02236275, -0.1953377, 4.1478113e-10, 0.9935106, 0.113739595, 0.19661361, -0.111519516, 0.97411835, -0.25520468, 0.67024136, 5.184394)
 fov = 53.9
 script = ExtResource("1_2c62f")
 
@@ -56,15 +56,23 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_0f027")
 
+[node name="CSGCylinderLeft" type="CSGCylinder3D" parent="Player" unique_id=947413816]
+unique_name_in_owner = true
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, -0.2466542, -0.25210172, 0)
+radius = 0.33007813
+height = 0.20758057
+
+[node name="CSGCylinderRight" type="CSGCylinder3D" parent="Player" unique_id=389142240]
+unique_name_in_owner = true
+transform = Transform3D(0.70710653, -0.70710665, 0, 0.70710665, 0.70710653, 0, 0, 0, 1, 0.24925917, -0.24451217, 0)
+radius = 0.33007813
+height = 0.20758057
+
 [node name="PlayerVisual" type="CSGCombiner3D" parent="Player" unique_id=1783345853]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Player/PlayerVisual" unique_id=223422873]
-size = Vector3(0.6977539, 0.60058594, 0.7324219)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Player/PlayerVisual" unique_id=947413816]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.29312134, 0)
-radius = 0.33007813
-height = 0.20758057
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.7, 0.7, 0.7)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=733718507]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020751953, -0.0008624494, 0)
@@ -75,9 +83,17 @@ unique_name_in_owner = true
 top_level = true
 target_position = Vector3(0, -10, 0)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Player" unique_id=997305581]
+[node name="ParticlesLeft" type="GPUParticles3D" parent="Player" unique_id=997305581]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016830057, 0)
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0.016830057, 0)
+amount = 100
+lifetime = 0.15000000000000002
+process_material = SubResource("ParticleProcessMaterial_jp3p1")
+draw_pass_1 = SubResource("BoxMesh_t18f2")
+
+[node name="ParticlesRight" type="GPUParticles3D" parent="Player" unique_id=507934183]
+unique_name_in_owner = true
+transform = Transform3D(0.7071067, -0.7071068, 0, 0.7071068, 0.7071067, 0, 0, 0, 1, 0, 0.016830057, 0)
 amount = 100
 lifetime = 0.15000000000000002
 process_material = SubResource("ParticleProcessMaterial_jp3p1")
