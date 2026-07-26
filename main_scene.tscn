@@ -68,22 +68,58 @@ smooth_faces = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020751953, 0.37937954, 0)
 shape = SubResource("BoxShape3D_t18f2")
 
-[node name="RayCast3D3" type="RayCast3D" parent="Player" unique_id=1828096776]
+[node name="RayCastsBottom" type="Node3D" parent="Player" unique_id=2016030610]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.773, -0.046, 0)
+
+[node name="RayCast3D3" type="RayCast3D" parent="Player/RayCastsBottom" unique_id=1828096776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.773, 0, 0)
 top_level = true
 target_position = Vector3(0, -10, 0)
 
-[node name="RayCast3D2" type="RayCast3D" parent="Player" unique_id=1394318904]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7731962, -0.045792937, 0)
+[node name="RayCast3D2" type="RayCast3D" parent="Player/RayCastsBottom" unique_id=1394318904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773, 0, 0)
 top_level = true
 target_position = Vector3(0, -10, 0)
 
-[node name="RayCast3D" type="RayCast3D" parent="Player" unique_id=1048577369]
-unique_name_in_owner = true
+[node name="RayCast3D" type="RayCast3D" parent="Player/RayCastsBottom" unique_id=1048577369]
 top_level = true
 target_position = Vector3(0, -10, 0)
+
+[node name="RayCastsRight" type="Node3D" parent="Player" unique_id=2090763166]
+unique_name_in_owner = true
+
+[node name="RayCast3D3" type="RayCast3D" parent="Player/RayCastsRight" unique_id=1293387016]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.44020528, 0.98524964, 0)
+top_level = true
+target_position = Vector3(0, -10, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="Player/RayCastsRight" unique_id=950005663]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.44, -0.09277904, 0)
+top_level = true
+target_position = Vector3(0, -10, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/RayCastsRight" unique_id=219641199]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.44, 0.449, 0)
+top_level = true
+target_position = Vector3(0, -10, 0)
+
+[node name="RayCastsLeft" type="Node3D" parent="Player" unique_id=759256373]
+unique_name_in_owner = true
+
+[node name="RayCast3D3" type="RayCast3D" parent="Player/RayCastsLeft" unique_id=1467100219]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.44, 0.985, 0)
+top_level = true
+target_position = Vector3(0, 10, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="Player/RayCastsLeft" unique_id=1955798117]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.44, -0.093, 0)
+top_level = true
+target_position = Vector3(0, 10, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/RayCastsLeft" unique_id=1779880097]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.44, 0.449, 0)
+top_level = true
+target_position = Vector3(0, 10, 0)
 
 [node name="ParticlesLeft" type="GPUParticles3D" parent="Player" unique_id=997305581]
 unique_name_in_owner = true
