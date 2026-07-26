@@ -44,7 +44,7 @@ albedo_color = Color(0.562211, 0.5679668, 0.19921553, 1)
 [node name="Node3D" type="Node3D" unique_id=1112978267]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1845939483]
-transform = Transform3D(0.9804811, 0.02236275, -0.1953377, 4.1478113e-10, 0.9935106, 0.113739595, 0.19661361, -0.111519516, 0.97411835, -0.25520468, 0.67024136, 5.184394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6108093, 7.851074)
 fov = 53.9
 script = ExtResource("1_2c62f")
 

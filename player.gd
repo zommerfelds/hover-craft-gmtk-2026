@@ -1,7 +1,7 @@
 extends RigidBody3D
 
-const stabilizer_y_pid_params = preload("res://pid_params.tres")
-@onready var pid_controller = PidController.new(stabilizer_y_pid_params)
+const pid_params = preload("res://pid_params.tres")
+@onready var pid_controller = PidController.new(pid_params)
 
 var time_acc = 0.0
 var thrust_ramp = 0.0
