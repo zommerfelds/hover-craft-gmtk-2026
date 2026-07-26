@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x += pid_output_x
 	var pid_output_y = pid_controller_y.calculate(target.y, position.y, delta)
 	velocity.y += pid_output_y
-	print(pid_output_x, " ", pid_output_y)
+	# print(pid_output_x, " ", pid_output_y)
 
 	position.x += velocity.x * delta
 	position.y += velocity.y * delta

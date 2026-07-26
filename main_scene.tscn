@@ -16,7 +16,7 @@ gradient = SubResource("Gradient_2c62f")
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.0
-emission_ring_radius = 0.2
+emission_ring_radius = 0.08
 emission_ring_inner_radius = 0.0
 emission_ring_cone_angle = 90.0
 inherit_velocity_ratio = 1.0
@@ -61,11 +61,24 @@ script = ExtResource("1_0f027")
 [node name="CSGTorus3D" type="CSGTorus3D" parent="Player/PlayerVisual" unique_id=135159807]
 transform = Transform3D(0.9235895, -3.336202e-09, 0.38338315, -0.38338315, -1.7335406e-08, 0.9235895, 3.5648204e-09, -1, -1.728984e-08, 0, 0.44500732, 0)
 inner_radius = 0.106
+outer_radius = 0.772
 smooth_faces = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=733718507]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020751953, 0.37937954, 0)
 shape = SubResource("BoxShape3D_t18f2")
+
+[node name="RayCast3D3" type="RayCast3D" parent="Player" unique_id=1828096776]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.773, -0.046, 0)
+top_level = true
+target_position = Vector3(0, -10, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="Player" unique_id=1394318904]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7731962, -0.045792937, 0)
+top_level = true
+target_position = Vector3(0, -10, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Player" unique_id=1048577369]
 unique_name_in_owner = true
@@ -74,7 +87,7 @@ target_position = Vector3(0, -10, 0)
 
 [node name="ParticlesLeft" type="GPUParticles3D" parent="Player" unique_id=997305581]
 unique_name_in_owner = true
-transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, -0.43318176, 0.019610971, 0)
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, -0.42905867, 0.054571405, 0)
 amount = 100
 lifetime = 0.15000000000000002
 process_material = SubResource("ParticleProcessMaterial_jp3p1")
@@ -82,13 +95,13 @@ draw_pass_1 = SubResource("BoxMesh_t18f2")
 
 [node name="CSGCylinderLeft" type="CSGCylinder3D" parent="Player/ParticlesLeft" unique_id=947413816]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012254119, -0.3211112, 0)
-radius = 0.33007813
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.112, 0)
+radius = 0.185
 height = 0.423
 
 [node name="ParticlesRight" type="GPUParticles3D" parent="Player" unique_id=507934183]
 unique_name_in_owner = true
-transform = Transform3D(0.7071067, -0.7071068, 0, 0.7071068, 0.7071067, 0, 0, 0, 1, 0.39334106, -0.016636282, 0)
+transform = Transform3D(0.7071067, -0.7071068, 0, 0.7071068, 0.7071067, 0, 0, 0, 1, 0.44390696, 0.056166053, 0)
 amount = 100
 lifetime = 0.15000000000000002
 process_material = SubResource("ParticleProcessMaterial_jp3p1")
@@ -96,8 +109,8 @@ draw_pass_1 = SubResource("BoxMesh_t18f2")
 
 [node name="CSGCylinderRight" type="CSGCylinder3D" parent="Player/ParticlesRight" unique_id=389142240]
 unique_name_in_owner = true
-transform = Transform3D(0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0, 1, -0.012207091, -0.31751895, 0)
-radius = 0.33007813
+transform = Transform3D(0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0, 1, 0, -0.112, 0)
+radius = 0.185
 height = 0.423
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1179679103]
@@ -112,44 +125,44 @@ use_collision = true
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D" unique_id=27216595]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.906715, -1.013463, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1797923692]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.054512, -4.0802813, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1914256246]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.484503, -7.232144, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=839381008]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.520184, -1.2383578, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1275210832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.021551, 4.6661215, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1586920460]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.22488, 8.873038, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1146365317]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.665127, -8.288952, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1662633030]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.142815, 3.277625, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=54807089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.705177, -8.676886, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1942324633]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.01318, -7.784754, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D" unique_id=806063239]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.185852, -5.0515747, 0)
-size = Vector3(13.132446, 8.335083, 1)
+size = Vector3(13.132446, 8.335083, 3)
