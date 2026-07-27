@@ -22,3 +22,4 @@ func _physics_process(delta: float) -> void:
 
 	position.x += velocity.x * delta
 	position.y += velocity.y * delta
+	position.z = position.z * 0.9 + (target.z + velocity.length() * 0.5) * 0.1

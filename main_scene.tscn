@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cxem5s83l4jfs" path="res://player.gd" id="1_0f027"]
 [ext_resource type="Script" uid="uid://562k1573ksec" path="res://camera.gd" id="1_2c62f"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c62f"]
+friction = 0.0
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_t18f2"]
 size = Vector3(1.363, 1.313, 1)
 
@@ -54,6 +57,7 @@ axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_2c62f")
 script = ExtResource("1_0f027")
 
 [node name="PlayerVisual" type="CSGCombiner3D" parent="Player" unique_id=1783345853]
