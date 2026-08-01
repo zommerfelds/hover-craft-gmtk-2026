@@ -2,6 +2,7 @@ extends RigidBody3D
 
 const pid_params = preload("res://pid_params.tres")
 @onready var pid_controller_bottom = PidController.new(pid_params)
+@onready var pid_controller_top = PidController.new(pid_params)
 @onready var pid_controller_left = PidController.new(pid_params)
 @onready var pid_controller_right = PidController.new(pid_params)
 
@@ -9,6 +10,7 @@ var time_acc = 0.0
 var thrust_ramp = 0.0
 var flip = false
 var ray_casts_bottom = []
+var ray_casts_top = []
 var ray_casts_right = []
 var ray_casts_left = []
 
@@ -17,6 +19,8 @@ func _ready() -> void:
 
 	for ray_cast in %RayCastsBottom.get_children():
 		ray_casts_bottom.append({"obj": ray_cast, "offset": ray_cast.position - position})
+	for ray_cast in %RayCastsTop.get_children():
+		ray_casts_top.append({"obj": ray_cast, "offset": ray_cast.position - position})
 	for ray_cast in %RayCastsRight.get_children():
 		ray_casts_right.append({"obj": ray_cast, "offset": ray_cast.position - position})
 	for ray_cast in %RayCastsLeft.get_children():
@@ -35,6 +39,7 @@ func _physics_process(delta: float) -> void:
 		update_active_cylinder()
 
 	apply_hover(delta, ray_casts_bottom, pid_controller_bottom, Vector3(0, 30, 0))
+	apply_hover(delta, ray_casts_top, pid_controller_top, Vector3(0, -21, 0))
 	apply_hover(delta, ray_casts_right, pid_controller_right, Vector3(-10, 0, 0))
 	apply_hover(delta, ray_casts_left, pid_controller_left, Vector3(10, 0, 0))
 

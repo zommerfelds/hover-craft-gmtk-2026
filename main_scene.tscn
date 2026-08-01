@@ -89,6 +89,24 @@ target_position = Vector3(0, -10, 0)
 top_level = true
 target_position = Vector3(0, -10, 0)
 
+[node name="RayCastsTop" type="Node3D" parent="Player" unique_id=1139942565]
+unique_name_in_owner = true
+
+[node name="RayCast3D3" type="RayCast3D" parent="Player/RayCastsTop" unique_id=407770016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55162835, 0.86654246, 0)
+top_level = true
+target_position = Vector3(0, 10, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="Player/RayCastsTop" unique_id=1800319199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.552, 0.867, 0)
+top_level = true
+target_position = Vector3(0, 10, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/RayCastsTop" unique_id=1123261254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86654246, 0)
+top_level = true
+target_position = Vector3(0, 10, 0)
+
 [node name="RayCastsRight" type="Node3D" parent="Player" unique_id=2090763166]
 unique_name_in_owner = true
 
