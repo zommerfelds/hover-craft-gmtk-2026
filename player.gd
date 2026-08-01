@@ -14,17 +14,18 @@ var ray_casts_left = []
 
 func _ready() -> void:
 	update_active_cylinder()
-	pass
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("reset"):
-		get_tree().reload_current_scene()
 	for ray_cast in %RayCastsBottom.get_children():
 		ray_casts_bottom.append({"obj": ray_cast, "offset": ray_cast.position - position})
 	for ray_cast in %RayCastsRight.get_children():
 		ray_casts_right.append({"obj": ray_cast, "offset": ray_cast.position - position})
 	for ray_cast in %RayCastsLeft.get_children():
 		ray_casts_left.append({"obj": ray_cast, "offset": ray_cast.position - position})
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
 
 func _physics_process(delta: float) -> void:
 	time_acc += delta
