@@ -47,7 +47,8 @@ shape = SubResource("BoxShape3D_t18f2")
 environment = SubResource("Environment_jp3p1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1437710427]
-transform = Transform3D(0.71496415, 0.6348036, -0.29300302, -0.2752967, 0.6408287, 0.71662426, 0.64268035, -0.4316979, 0.63292885, -2.7519145, 0, 5.2655764)
+transform = Transform3D(-0.14997244, -0.97826535, 0.1431982, 0.30687818, 0.091623925, 0.94732845, -0.9398586, 0.18601748, 0.2864672, -6.991488, 0, 3.7139192)
+shadow_enabled = true
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="." unique_id=1318639615]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.544427, 2.2702959, -16.59989)
