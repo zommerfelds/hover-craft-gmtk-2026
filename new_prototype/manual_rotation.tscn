@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bxncyujo7gq6o"]
+[gd_scene format=3 uid="uid://ctjunsp8x7jvw"]
 
-[ext_resource type="Script" uid="uid://562k1573ksec" path="res://camera.gd" id="1_8ygpl"]
-[ext_resource type="Script" uid="uid://gi7pukmnwhc6" path="res://new_prototype/auto_rotate.gd" id="2_8ygpl"]
+[ext_resource type="Script" uid="uid://562k1573ksec" path="res://camera.gd" id="1_i8kcq"]
+[ext_resource type="Script" uid="uid://bi4gpady0q0pv" path="res://new_prototype/manual_rotation.gd" id="2_rvokp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c62f"]
 friction = 0.57
@@ -24,13 +24,13 @@ albedo_color = Color(0.562211, 0.5679668, 0.19921553, 1)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1845939483]
 transform = Transform3D(1, 0, 0, 0, 0.6809807, 0.73230135, 0, -0.73230135, 0.6809807, 0, 2.227952, 2.2350154)
-script = ExtResource("1_8ygpl")
+script = ExtResource("1_i8kcq")
 
 [node name="Player" type="RigidBody3D" parent="." unique_id=1776688773]
 unique_name_in_owner = true
 physics_material_override = SubResource("PhysicsMaterial_2c62f")
 angular_damp = 1.295
-script = ExtResource("2_8ygpl")
+script = ExtResource("2_rvokp")
 
 [node name="PlayerVisual" type="CSGCombiner3D" parent="Player" unique_id=1783345853]
 
