@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bkxcqh3i1wyyg"]
+
+[ext_resource type="Script" uid="uid://562k1573ksec" path="res://camera.gd" id="1_i7hx2"]
+[ext_resource type="Script" uid="uid://bdh7voafbk3tn" path="res://new_prototype/hot_air_ballon.gd" id="2_cio8h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c62f"]
+friction = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t18f2"]
+size = Vector3(1.363, 1.313, 1)
+
+[sub_resource type="Environment" id="Environment_jp3p1"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.9843158, 0.8852665, 0.87888867, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0f027"]
+albedo_color = Color(0.562211, 0.5679668, 0.19921553, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1112978267]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1845939483]
+transform = Transform3D(1, 0, 0, 0, 0.9443743, 0.32887268, 0, -0.32887268, 0.9443743, 0, 2.227952, 3.3803372)
+script = ExtResource("1_i7hx2")
+
+[node name="Player" type="RigidBody3D" parent="." unique_id=1776688773]
+unique_name_in_owner = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_2c62f")
+script = ExtResource("2_cio8h")
+
+[node name="PlayerVisual" type="CSGCombiner3D" parent="Player" unique_id=1783345853]
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Player/PlayerVisual" unique_id=135159807]
+transform = Transform3D(0.9235895, -3.336201e-09, 0.38338315, 2.0323032e-08, -1, -5.7661218e-08, 0.38338315, 6.104679e-08, -0.9235895, 0, 0.44500732, 0)
+inner_radius = 0.106
+outer_radius = 0.772
+smooth_faces = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=733718507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020751953, 0.44548443, 0)
+shape = SubResource("BoxShape3D_t18f2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1179679103]
+environment = SubResource("Environment_jp3p1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1437710427]
+transform = Transform3D(0.71496415, 0.6348036, -0.29300302, -0.2752967, 0.6408287, 0.71662426, 0.64268035, -0.4316979, 0.63292885, -2.7519145, 0, 5.2655764)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1486677997]
+material_override = SubResource("StandardMaterial3D_0f027")
+use_collision = true
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D" unique_id=806063239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.185852, -5.0515747, -2.8988342)
+size = Vector3(13.132446, 8.335083, 14.752991)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D" unique_id=200300556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7955093, -1.5645657, -12.404214)
+size = Vector3(13.132446, 8.335083, 14.752991)
