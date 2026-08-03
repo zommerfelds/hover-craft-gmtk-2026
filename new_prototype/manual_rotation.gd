@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("thrust"):
-		apply_force(Vector3(0, 8, 0))
+		apply_force(basis.y * 10)
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	apply_impulse(basis.y * up_force * 1.5)
@@ -21,14 +21,14 @@ func _physics_process(delta: float) -> void:
 	if up_force == 0.0:
 		up_force_vel = 0.0
 	else:
-		up_force_vel -= delta * 5.0
+		up_force_vel -= delta * 3.0
 	print("up_force_vel: ", up_force_vel, ", up_force:", up_force)
 
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		# apply_impulse(Vector3(0, 2, 0))
-		up_force_vel += 1.0
+		up_force_vel += 0.7
 		print("Mouse Click/Unclick at: ", event.position, event.pressed)
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	elif event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

@@ -1,13 +1,7 @@
 [gd_scene format=3 uid="uid://ctjunsp8x7jvw"]
 
 [ext_resource type="Script" uid="uid://562k1573ksec" path="res://camera.gd" id="1_i8kcq"]
-[ext_resource type="Script" uid="uid://bi4gpady0q0pv" path="res://new_prototype/manual_rotation.gd" id="2_rvokp"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c62f"]
-friction = 0.57
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_t18f2"]
-size = Vector3(1.363, 0.6638242, 1)
+[ext_resource type="PackedScene" uid="uid://bx5uwjbj8go04" path="res://new_prototype/rocket.tscn" id="2_rndsj"]
 
 [sub_resource type="Environment" id="Environment_jp3p1"]
 background_mode = 1
@@ -23,25 +17,12 @@ albedo_color = Color(0.562211, 0.5679668, 0.19921553, 1)
 [node name="Node3D" type="Node3D" unique_id=1112978267]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1845939483]
-transform = Transform3D(1, 0, 0, 0, 0.6809807, 0.73230135, 0, -0.73230135, 0.6809807, 0, 2.227952, 2.2350154)
+transform = Transform3D(1, 0, 0, 0, 0.68098074, 0.7323014, 0, -0.7323014, 0.68098074, 0, 3.9289985, 3.7765598)
 script = ExtResource("1_i8kcq")
 
-[node name="Player" type="RigidBody3D" parent="." unique_id=1776688773]
+[node name="Player" parent="." unique_id=102549172 instance=ExtResource("2_rndsj")]
 unique_name_in_owner = true
-physics_material_override = SubResource("PhysicsMaterial_2c62f")
-angular_damp = 1.295
-script = ExtResource("2_rvokp")
-
-[node name="PlayerVisual" type="CSGCombiner3D" parent="Player" unique_id=1783345853]
-
-[node name="CSGTorus3D" type="CSGTorus3D" parent="Player/PlayerVisual" unique_id=135159807]
-transform = Transform3D(0.9235895, -3.336201e-09, 0.38338315, 2.0323032e-08, -1, -5.7661218e-08, 0.38338315, 6.104679e-08, -0.9235895, 0, 0, 0)
-inner_radius = 0.106
-outer_radius = 0.772
-smooth_faces = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=733718507]
-shape = SubResource("BoxShape3D_t18f2")
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0, 0.856606, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1179679103]
 environment = SubResource("Environment_jp3p1")

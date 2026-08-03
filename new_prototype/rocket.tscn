@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://bx5uwjbj8go04"]
+
+[ext_resource type="Script" uid="uid://bi4gpady0q0pv" path="res://new_prototype/manual_rotation.gd" id="1_bq3k1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nfk4m"]
+friction = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfkg0"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qyi2b"]
+material = SubResource("StandardMaterial3D_tfkg0")
+radius = 0.63
+height = 2.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cy55f"]
+transparency = 1
+albedo_color = Color(0.34675583, 0.2691514, 0.23627526, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qyi2b"]
+material = SubResource("StandardMaterial3D_cy55f")
+top_radius = 0.16
+bottom_radius = 0.305
+height = 0.305
+radial_segments = 23
+cap_top = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iia4k"]
+albedo_color = Color(0.5566455, 0.53480023, 0.4957568, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qyi2b"]
+radius = 0.63
+height = 2.25
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j30hq"]
+size = Vector3(0.095, 0.7507656, 1.576)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1ycu"]
+albedo_color = Color(0.047086187, 0.10739463, 0.099550255, 1)
+stencil_flags = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hg6gp"]
+albedo_color = Color(0.6863641, 0.91549176, 0.9568648, 1)
+
+[node name="rocket_body" type="RigidBody3D" unique_id=1958531508]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_nfk4m")
+gravity_scale = 0.6
+can_sleep = false
+continuous_cd = true
+angular_damp = 2.475
+script = ExtResource("1_bq3k1")
+
+[node name="body mesh" type="MeshInstance3D" parent="." unique_id=1039899695]
+mesh = SubResource("CapsuleMesh_qyi2b")
+
+[node name="main nozzle right mesh" type="MeshInstance3D" parent="." unique_id=1682079587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.084, 0)
+mesh = SubResource("CylinderMesh_qyi2b")
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=366925437]
+transform = Transform3D(0.707107, 0, -0.7071068, 0, 1.0000004, 0, 0.70710695, 0, 0.70710677, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_iia4k")
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=1884497736]
+transform = Transform3D(-0.00357908, -0.0049928725, 0.9999811, 0.5825951, 0.81274027, 0.0061431807, -0.8127556, 0.5826062, -1.1920929e-07, 0.003087718, -0.50262207, -0.5812179)
+radius = 0.05
+height = 1.16
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=359754792]
+transform = Transform3D(-0.0049470663, -0.0036421418, 0.9999811, 0.8052729, 0.592874, 0.0061431807, -0.59288526, 0.8052882, -1.1920929e-07, 0.0049522407, -0.80612284, -0.4564621)
+radius = 0.05
+height = 1.16
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=58943175]
+transform = Transform3D(-0.00012302399, -0.006141954, 0.99998116, 0.020017684, 0.9997816, 0.00614318, -0.99980056, 0.020018063, -5.9604645e-08, 0.0070999027, -1.1337881, -0.91620415)
+radius = 0.05
+height = 0.38
+
+[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=978114049]
+transform = Transform3D(-0.00357911, -0.0049928725, -0.99998105, 0.58259517, 0.8127405, -0.0061431807, 0.8127559, -0.5826062, 0, 0.0030877776, -0.50262207, 0.587137)
+radius = 0.05
+height = 1.16
+
+[node name="CSGCylinder3D14" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=1038892135]
+transform = Transform3D(-0.0049470365, -0.0036421418, -0.99998105, 0.8052732, 0.59287405, -0.0061431807, 0.5928853, -0.8052884, 0, 0.0049523152, -0.8061231, 0.46238104)
+radius = 0.05
+height = 1.16
+
+[node name="CSGCylinder3D15" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=1732187594]
+transform = Transform3D(-0.00012299418, -0.006141955, -0.9999809, 0.020017684, 0.99978185, -0.0061431807, 0.9998008, -0.02001806, 0, 0.007099986, -1.1337883, 0.9227738)
+radius = 0.05
+height = 0.38
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=1975532259]
+transform = Transform3D(0.809161, -0.5875879, 0, 0.5875879, 0.809161, 0, 0, 0, 1, 0.5842945, -0.4990514, 0)
+radius = 0.05
+height = 1.16
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=1888811984]
+transform = Transform3D(0.58792686, -0.8089149, 0, 0.8089149, 0.58792686, 0, 0, 0, 1, 0.46140558, -0.80331856, 0)
+radius = 0.05
+height = 1.16
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=289648006]
+transform = Transform3D(0.99965847, -0.026159633, 2.9802322e-08, 0.026159633, 0.9996584, 1.6463611e-10, 2.9802322e-08, -1.8626451e-09, 1, 0.9236118, -1.1281571, 0.00032537617)
+radius = 0.05
+height = 0.38
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=1355656074]
+transform = Transform3D(-0.81631935, 0.5776021, 8.742115e-08, 0.57760215, 0.8163194, 5.3705423e-10, -7.1053336e-08, 5.0933036e-08, -1, -0.5840379, -0.50622886, 1.1930301e-08)
+radius = 0.05
+height = 1.16
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=962792315]
+transform = Transform3D(-0.59782094, 0.80163074, 8.742116e-08, 0.8016308, 0.597821, 5.370542e-10, -5.183166e-08, 7.04005e-08, -1, -0.45741987, -0.80896336, 2.28368e-08)
+radius = 0.05
+height = 1.16
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="CSGCombiner3D2" unique_id=2057664315]
+transform = Transform3D(-0.9999045, 0.013875722, 5.9604645e-08, 0.013875726, 0.99990463, 3.010252e-10, -5.9604645e-08, 1.8626451e-09, -1, -0.91533077, -1.1394548, 0.00032534637)
+radius = 0.05
+height = 0.38
+
+[node name="body collision" type="CollisionShape3D" parent="." unique_id=1029200952]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_qyi2b")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1746101438]
+transform = Transform3D(0.99551105, 0.09470003, 0, -0.09470003, 0.99551105, 0, 0, 0, 1, -0.61352426, -0.9835669, 0)
+shape = SubResource("BoxShape3D_j30hq")
+debug_fill = false
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1543010452]
+transform = Transform3D(0.99555504, -0.09410835, 0, 0.09410835, 0.99555504, 0, 0, 0, 1, 0.61399996, -0.98399997, 0)
+shape = SubResource("BoxShape3D_j30hq")
+debug_fill = false
+
+[node name="GPUParticlesCollisionHeightField3D" type="GPUParticlesCollisionHeightField3D" parent="." unique_id=1107504672]
+transform = Transform3D(1.0000191, 2.6402995e-07, 0, -2.6402995e-07, 1.0000191, 0, 0, 0, 1, -9.23872e-07, -5.000696, 0)
+layers = 0
+size = Vector3(8, 7.482729, 2)
+heightfield_mask = 1048573
+
+[node name="window" type="CSGCylinder3D" parent="." unique_id=1386567198]
+transform = Transform3D(0.8949664, 0.0054980386, -0.005493088, 0.005492985, 3.3705463e-05, 0.89498335, 0.00549814, -0.89498305, -3.9529727e-08, -0.0025481042, -1.5616417e-05, 0.44122022)
+radius = 0.385
+height = 0.4741211
+sides = 24
+material = SubResource("StandardMaterial3D_o1ycu")
+
+[node name="cutout" type="CSGCylinder3D" parent="window" unique_id=523396196]
+transform = Transform3D(0.9999929, 2.6077032e-08, 1.0544343e-13, -2.0489097e-08, 0.9999929, 0, 6.425416e-14, -2.1671553e-13, 1, -6.0535967e-09, -0.11303538, 0)
+operation = 2
+radius = 0.31396484
+height = 0.41845703
+sides = 24
+
+[node name="glass" type="CSGCylinder3D" parent="window" unique_id=52587923]
+transform = Transform3D(1, 2.8871e-08, 2.6367797e-15, 0, 0.999992, -4.7606363e-13, 0, 2.2382096e-13, 1, -6.9849193e-09, -0.15246338, 0)
+radius = 0.38427734
+height = 0.12573242
+material = SubResource("StandardMaterial3D_hg6gp")
+
+[node name="rocket" type="Node3D" parent="." unique_id=102549172]
+unique_name_in_owner = true
+
+[node name="camera flying" type="Camera3D" parent="rocket" unique_id=847501734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3495533, 15.795335)
+top_level = true
+
+[node name="camera landed" type="Camera3D" parent="rocket" unique_id=137566010]
+unique_name_in_owner = true
+transform = Transform3D(0.89879405, 0.21319541, -0.38303652, 0, 0.8737722, 0.4863354, 0.43837115, -0.43711537, 0.78534126, -3.0248709, 4.7032156, 6.0967937)
+visible = false
