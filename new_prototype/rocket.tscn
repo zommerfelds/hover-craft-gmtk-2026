@@ -55,6 +55,7 @@ mesh = SubResource("CapsuleMesh_qyi2b")
 
 [node name="main nozzle right mesh" type="MeshInstance3D" parent="." unique_id=1682079587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.084, 0)
+layers = 2
 mesh = SubResource("CylinderMesh_qyi2b")
 
 [node name="CSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=366925437]
@@ -160,15 +161,3 @@ transform = Transform3D(1, 2.8871e-08, 2.6367797e-15, 0, 0.999992, -4.7606363e-1
 radius = 0.38427734
 height = 0.12573242
 material = SubResource("StandardMaterial3D_hg6gp")
-
-[node name="rocket" type="Node3D" parent="." unique_id=102549172]
-unique_name_in_owner = true
-
-[node name="camera flying" type="Camera3D" parent="rocket" unique_id=847501734]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3495533, 15.795335)
-top_level = true
-
-[node name="camera landed" type="Camera3D" parent="rocket" unique_id=137566010]
-unique_name_in_owner = true
-transform = Transform3D(0.89879405, 0.21319541, -0.38303652, 0, 0.8737722, 0.4863354, 0.43837115, -0.43711537, 0.78534126, -3.0248709, 4.7032156, 6.0967937)
-visible = false

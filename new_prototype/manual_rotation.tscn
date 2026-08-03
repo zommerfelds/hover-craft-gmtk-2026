@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://562k1573ksec" path="res://camera.gd" id="1_i8kcq"]
 [ext_resource type="PackedScene" uid="uid://bx5uwjbj8go04" path="res://new_prototype/rocket.tscn" id="2_rndsj"]
+[ext_resource type="Script" uid="uid://dl74uxvwccgu4" path="res://new_prototype/landing_cam.gd" id="3_rvokp"]
 
 [sub_resource type="Environment" id="Environment_jp3p1"]
 background_mode = 1
@@ -52,3 +53,38 @@ size = Vector3(13.132446, 8.335083, 14.752991)
 [node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D" unique_id=200300556]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7955093, -1.5645657, -12.404214)
 size = Vector3(13.132446, 8.335083, 14.752991)
+
+[node name="Border" type="ColorRect" parent="." unique_id=858978690]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -377.0
+offset_right = -5.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Border" unique_id=817958447]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 360.0
+offset_bottom = 360.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="Border/SubViewportContainer" unique_id=406463120]
+handle_input_locally = false
+size = Vector2i(350, 350)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Border/SubViewportContainer/SubViewport" unique_id=1654890545]
+transform = Transform3D(1, 0, 0, 0, -4.371136e-08, 1, 0, -1, -4.371136e-08, 0, 4.0055103, 0)
+cull_mask = 1048573
+projection = 1
+size = 3.58
+script = ExtResource("3_rvokp")
