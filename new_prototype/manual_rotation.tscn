@@ -18,7 +18,8 @@ albedo_color = Color(0.562211, 0.5679668, 0.19921553, 1)
 [node name="Node3D" type="Node3D" unique_id=1112978267]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1845939483]
-transform = Transform3D(1, 0, 0, 0, 0.68098074, 0.7323014, 0, -0.7323014, 0.68098074, 0, 3.9289985, 3.7765598)
+transform = Transform3D(1, 0, 0, 0, 0.72747105, 0.68613845, 0, -0.68613845, 0.72747105, 0, 9.5641, 10.040078)
+fov = 27.4
 script = ExtResource("1_i8kcq")
 
 [node name="Player" parent="." unique_id=102549172 instance=ExtResource("2_rndsj")]

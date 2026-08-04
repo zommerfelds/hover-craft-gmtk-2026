@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("thrust"):
-		apply_force(basis.y * 10)
+		apply_force(basis.y * 5)
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	apply_impulse(basis.y * up_force * 1.5)

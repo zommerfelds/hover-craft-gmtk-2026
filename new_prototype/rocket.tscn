@@ -10,7 +10,7 @@ friction = 0.3
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qyi2b"]
 material = SubResource("StandardMaterial3D_tfkg0")
 radius = 0.63
-height = 2.25
+height = 1.7426758
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cy55f"]
 transparency = 1
@@ -29,7 +29,7 @@ albedo_color = Color(0.5566455, 0.53480023, 0.4957568, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qyi2b"]
 radius = 0.63
-height = 2.25
+height = 1.7436523
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j30hq"]
 size = Vector3(0.095, 0.7507656, 1.576)
@@ -51,6 +51,7 @@ angular_damp = 2.475
 script = ExtResource("1_bq3k1")
 
 [node name="body mesh" type="MeshInstance3D" parent="." unique_id=1039899695]
+transform = Transform3D(0.99998796, 0, 0, 0, 0.99998796, 0, 0, 0, 1, 0, -0.25366205, 0)
 mesh = SubResource("CapsuleMesh_qyi2b")
 
 [node name="main nozzle right mesh" type="MeshInstance3D" parent="." unique_id=1682079587]
@@ -123,7 +124,7 @@ radius = 0.05
 height = 0.38
 
 [node name="body collision" type="CollisionShape3D" parent="." unique_id=1029200952]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.9999871, 0, 0, 0, 0.9999871, 0, 0, 0, 1, 0, -0.25317383, 0)
 shape = SubResource("CapsuleShape3D_qyi2b")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1746101438]
@@ -143,7 +144,7 @@ size = Vector3(8, 7.482729, 2)
 heightfield_mask = 1048573
 
 [node name="window" type="CSGCylinder3D" parent="." unique_id=1386567198]
-transform = Transform3D(0.8949664, 0.0054980386, -0.005493088, 0.005492985, 3.3705463e-05, 0.89498335, 0.00549814, -0.89498305, -3.9529727e-08, -0.0025481042, -1.5616417e-05, 0.44122022)
+transform = Transform3D(0.89496636, 0.005498038, -0.0054930877, 0.0054929843, 3.370546e-05, 0.8949833, 0.00549814, -0.89498305, -3.9529727e-08, -0.002548104, -0.2457213, 0.44122022)
 radius = 0.385
 height = 0.4741211
 sides = 24
