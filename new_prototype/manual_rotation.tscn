@@ -118,3 +118,35 @@ cull_mask = 1048573
 projection = 1
 size = 3.58
 script = ExtResource("3_rvokp")
+
+[node name="Border2" type="ColorRect" parent="." unique_id=596018101]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -753.0
+offset_right = -5.0
+offset_bottom = -383.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Border2" unique_id=1995779835]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 360.0
+offset_bottom = 360.0
+
+[node name="SubViewport" type="SubViewport" parent="Border2/SubViewportContainer" unique_id=1892691763]
+handle_input_locally = false
+size = Vector2i(350, 350)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Border2/SubViewportContainer/SubViewport" unique_id=763138476]
+transform = Transform3D(-4.371139e-08, 4.371136e-08, -1, -4.371139e-08, 1, 4.3711363e-08, 1, 4.3711392e-08, -4.3711385e-08, -5.962799, 0.52185297, 0)
+cull_mask = 1048573
+size = 11.036
+script = ExtResource("3_rvokp")
