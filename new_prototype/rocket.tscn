@@ -31,15 +31,15 @@ albedo_color = Color(0.5566455, 0.53480023, 0.4957568, 1)
 radius = 0.63
 height = 1.7436523
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_j30hq"]
-size = Vector3(0.095, 0.7507656, 1.576)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1ycu"]
 albedo_color = Color(0.047086187, 0.10739463, 0.099550255, 1)
 stencil_flags = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hg6gp"]
 albedo_color = Color(0.6863641, 0.91549176, 0.9568648, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jp3p1"]
+size = Vector3(1.35, 0.586, 1.35)
 
 [node name="rocket_body" type="RigidBody3D" unique_id=1958531508]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0, 0, 0)
@@ -127,16 +127,6 @@ height = 0.38
 transform = Transform3D(0.9999871, 0, 0, 0, 0.9999871, 0, 0, 0, 1, 0, -0.25317383, 0)
 shape = SubResource("CapsuleShape3D_qyi2b")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1746101438]
-transform = Transform3D(0.99551105, 0.09470003, 0, -0.09470003, 0.99551105, 0, 0, 0, 1, -0.61352426, -0.9835669, 0)
-shape = SubResource("BoxShape3D_j30hq")
-debug_fill = false
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1543010452]
-transform = Transform3D(0.99555504, -0.09410835, 0, 0.09410835, 0.99555504, 0, 0, 0, 1, 0.61399996, -0.98399997, 0)
-shape = SubResource("BoxShape3D_j30hq")
-debug_fill = false
-
 [node name="GPUParticlesCollisionHeightField3D" type="GPUParticlesCollisionHeightField3D" parent="." unique_id=1107504672]
 transform = Transform3D(1.0000191, 2.6402995e-07, 0, -2.6402995e-07, 1.0000191, 0, 0, 0, 1, -9.23872e-07, -5.000696, 0)
 layers = 0
@@ -168,3 +158,7 @@ transform = Transform3D(1.0000001, 0, 0, 0, -4.371139e-08, 1.0000001, 0, -1, -4.
 light_energy = 2.926
 spot_range = 6.547
 spot_angle = 59.17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1362217328]
+transform = Transform3D(0.9999847, 0, 0, 0, 0.9999847, 0, 0, 0, 1, 0, -1.0504714, 0)
+shape = SubResource("BoxShape3D_jp3p1")
