@@ -38,6 +38,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.544427, 2.2702959, -16.5998
 material_override = SubResource("StandardMaterial3D_8ygpl")
 size = Vector3(2.185524, 0.97268677, 2.4100075)
 
+[node name="CSGBox3D15" type="CSGBox3D" parent="." unique_id=543672334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.340622, -25.71159, -8.397676)
+material_override = SubResource("StandardMaterial3D_8ygpl")
+size = Vector3(2.185524, 0.97268677, 2.4100075)
+
 [node name="CSGBox3D13" type="CSGBox3D" parent="." unique_id=871807382]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035214663, -1.1754298, 0.13337213)
 material_override = SubResource("StandardMaterial3D_8ygpl")
@@ -54,6 +59,30 @@ size = Vector3(13.132446, 8.335083, 14.752991)
 [node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D" unique_id=200300556]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7955093, -1.5645657, -12.404214)
 size = Vector3(13.132446, 8.335083, 14.752991)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2068881864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.410598, -1.5645657, 0.65557957)
+size = Vector3(13.132446, 8.335083, 14.752991)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="CSGCombiner3D" unique_id=341243553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.398757, -29.601645, -7.4930716)
+size = Vector3(13.132446, 8.335083, 14.752991)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2011948058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.229546, -5.761591, -13.169693)
+size = Vector3(13.132446, 8.335083, 14.752991)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1493596972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.20748, -4.1196156, -23.609734)
+size = Vector3(13.132446, 8.335083, 14.752991)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1556220959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.32465, -4.1196156, -2.4475136)
+size = Vector3(13.132446, 8.335083, 14.752991)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2037114637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.021442, -5.087536, 11.351416)
+size = Vector3(42.467316, 7.5039673, 14.752991)
 
 [node name="Border" type="ColorRect" parent="." unique_id=858978690]
 anchors_preset = 3
